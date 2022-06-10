@@ -16,8 +16,6 @@ const GetGeolocation = (props) => {
 
     navigator.geolocation.getCurrentPosition(function(position) {
       setGeolocation({latitude: position.coords.latitude, longitude: position.coords.longitude})
-      console.log("Latitude is :", position.coords.latitude);
-      console.log("Longitude is :", position.coords.longitude);
     });
   }
 
