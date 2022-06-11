@@ -3,6 +3,7 @@ import React from 'react';
 
 const Map = ({location, searchHistory}) => {
   const {lat, lng} = location;
+  const history = searchHistory.slice(2);
 
   const containerStyle = {
     width: '60vw',
@@ -38,16 +39,13 @@ const Map = ({location, searchHistory}) => {
       onUnmount={onUnmount}
       options={options}
     >
-    {searchHistory.map((location, index) => {
-      if(location.address!==""){
+    {history.map((location, index) => {
         return (
           <Marker
             key={index}
             position={{ lat: location.lat, lng: location.lng }}   
           />
         )
-      }
-
     })}
     </GoogleMap>
   ) : <></>
