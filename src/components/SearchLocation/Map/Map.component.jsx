@@ -1,15 +1,21 @@
 import { GoogleMap, useJsApiLoader, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import { useState } from 'react';
 import React from 'react';
 
-const Map = () => {
+const Map = ({location}) => {
+  const {lat, lng} = location;
+  console.log(lat);
+
+  // const [ center, setCenter] = useState({lat: 43.6532, lng: -79.3832})
+
   const containerStyle = {
     width: '60vw',
     height: '60vh'
   };
 
   const center = {
-    lat: 43.6532,
-    lng: -79.3832,
+    lat: lat || 43.6532,
+    lng: lng || -79.3832
   };
 
   const { isLoaded, loadError } = useJsApiLoader({
