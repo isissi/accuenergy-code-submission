@@ -1,5 +1,11 @@
 .table-container {
   width: 40vw;
-  height: 60vh;
-  background-color: aliceblue;
+  height: 70vh;
+
+  .delete-button-container {
+    margin: 5px 10px;
+    width: 200px; 
+    display: flex;
+    justify-content: space-between;
+  }
 }

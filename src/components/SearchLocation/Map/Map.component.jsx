@@ -7,7 +7,7 @@ const Map = ({location, searchHistory}) => {
 
   const containerStyle = {
     width: '60vw',
-    height: '60vh'
+    height: '70vh'
   };
 
   const center = {

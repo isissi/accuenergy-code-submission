@@ -46,7 +46,7 @@ const SearchLocation = () => {
       </Space>
       <div className="map-table-container">
         <Map location={location} searchHistory={searchHistory}/>
-        <PaginationTable searchHistory={searchHistory} />
+        <PaginationTable searchHistory={searchHistory} setSeachHistory={setSeachHistory}/>
       </div>
     </div>
   )
