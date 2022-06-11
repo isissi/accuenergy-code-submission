@@ -1,12 +1,8 @@
 import { GoogleMap, useJsApiLoader, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
-import { useState } from 'react';
 import React from 'react';
 
-const Map = ({location}) => {
+const Map = ({location, searchHistory}) => {
   const {lat, lng} = location;
-  console.log(lat);
-
-  // const [ center, setCenter] = useState({lat: 43.6532, lng: -79.3832})
 
   const containerStyle = {
     width: '60vw',
@@ -42,7 +38,17 @@ const Map = ({location}) => {
       onUnmount={onUnmount}
       options={options}
     >
+    {searchHistory.map((location, index) => {
+      if(location.address!==""){
+        return (
+          <Marker
+            key={index}
+            position={{ lat: location.lat, lng: location.lng }}   
+          />
+        )
+      }
 
+    })}
     </GoogleMap>
   ) : <></>
 }

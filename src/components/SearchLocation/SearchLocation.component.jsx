@@ -16,13 +16,16 @@ const SearchLocation = () => {
 
   const { Search } = Input;
 
+  useEffect(() => {
+    setSeachHistory(prev => [...prev, location])
+    }, [location]);
+
   const onSearch = async (value) => {
     const returnedCornidate = await getGeocode(value);
     if (!returnedCornidate) {
       setError(true); 
     } else {
       setLocation({address: value, lat: returnedCornidate[0], lng: returnedCornidate[1]});
-      setSeachHistory(prev => [...prev, location]);
       setError(false);
     }
 
@@ -42,8 +45,8 @@ const SearchLocation = () => {
       <p style={{visibility: error ? "visible" : "hidden"}}>Please provide a valid location</p>
       </Space>
       <div className="map-table-container">
-        <Map location={location} />
-        <PaginationTable />
+        <Map location={location} searchHistory={searchHistory}/>
+        <PaginationTable searchHistory={searchHistory} />
       </div>
     </div>
   )
