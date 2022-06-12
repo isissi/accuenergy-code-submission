@@ -1,36 +1,51 @@
 import { Button } from "antd";
 import Skeleton from 'react-loading-skeleton'
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+import getAddress from "../../helpers/getAddress";
 
 import "./GetGeolocation.styles.scss";
 import "antd/dist/antd.css";
 import 'react-loading-skeleton/dist/skeleton.css'
 
-const GetGeolocation = (props) => {
-  const { geolocation, setGeolocation } = props;
+const GetGeolocation = () => {
+  const [ geolocation, setGeolocation ] = useState(null);
+  const [ address, setAddress ] = useState(null);
 
   const [ buttonClicked, setButtonClicked ] = useState(false);
 
-  const getCordinate = () => {
+  useEffect(() => {
+    if(geolocation!==null){
+      getAddress(geolocation).then((res)=>setAddress(res))
+    }
+    }, [geolocation]);
+
+
+  const cordinate = !address ? <Skeleton width={500} height={30}/> : "Laitude: " + geolocation.latitude + ", Longitude: " + geolocation.latitude;
+
+  const displayAddress = !address ? <Skeleton width={500} height={30}/> : 'Your address: ' + address;
+
+  const onClick = () => {
     setButtonClicked(true);
 
-    navigator.geolocation.getCurrentPosition(function(position) {
-      setGeolocation({latitude: position.coords.latitude, longitude: position.coords.longitude})
-    });
+        navigator.geolocation.getCurrentPosition(function(position) {
+        setGeolocation({latitude: position.coords.latitude, longitude:position.coords.longitude});
+      })
   }
-
-  const cordinate = !geolocation ? <Skeleton width={450} height={30}/> : `Latitude: ` + geolocation.latitude + `, Longitude: ` + geolocation.longitude;
 
   return (
     <div id="geo-button-container">
       {!buttonClicked 
         ?
-        <h2>Get your geolocation from browser ↓</h2> 
+        <h2>Get your geolocation from browser <br/> Click here↓</h2> 
         :
-        <h2>{cordinate}</h2> 
+        <>
+          <h2>{cordinate}</h2> 
+          <h2>{displayAddress}</h2>
+        </>
       }
       
-      <Button type="primary" id="geo-button" onClick={getCordinate}>
+      <Button type="primary" id="geo-button" onClick={onClick}>
         Get Geolocation
       </Button>
     </div>

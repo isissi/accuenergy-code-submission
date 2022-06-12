@@ -60,11 +60,6 @@ const PaginationTable = ({searchHistory, setSeachHistory}) => {
         columns={columns}
         dataSource={data}
       />
-      {/* {searchHistory.map((location, index) => {
-        return (
-          <p key={index}>{location.address}</p>
-        )
-      })} */}
     </div>
   )
 }
