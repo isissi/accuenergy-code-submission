@@ -2,10 +2,10 @@ import Geocode from "react-geocode";
 
 const getAddress = (geolocation) => {
   return(
+  //get address by cordinate
   Geocode.fromLatLng(geolocation.latitude, geolocation.longitude).then(
     (response) => {
       const address = response.results[0].formatted_address;
-      console.log(geolocation.latitude);
       let city, state, country;
       for (let i = 0; i < response.results[0].address_components.length; i++) {
         for (let j = 0; j < response.results[0].address_components[i].types.length; j++) {
@@ -22,7 +22,6 @@ const getAddress = (geolocation) => {
           }
         }
       }
-      console.log('address' + address);
       return address;
     },
     (error) => {
