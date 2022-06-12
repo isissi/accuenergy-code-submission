@@ -27,9 +27,9 @@ const GetGeolocation = () => {
 
   const onClick = () => {
     setButtonClicked(true);
-
-        navigator.geolocation.getCurrentPosition(function(position) {
-        setGeolocation({latitude: position.coords.latitude, longitude:position.coords.longitude});
+      //get cordinate from browser, & update te geolocation
+      navigator.geolocation.getCurrentPosition(function(position) {
+      setGeolocation({latitude: position.coords.latitude, longitude:position.coords.longitude});
       })
   }
 
