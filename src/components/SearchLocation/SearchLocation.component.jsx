@@ -46,7 +46,7 @@ const SearchLocation = () => {
       />
       <p style={{visibility: error ? "visible" : "hidden"}}>Please provide a valid location</p>
       </Space>
-      <Time location={location}/>
+      <Time location={location} error={error} />
       <div className="map-table-container">
         <Map location={location} searchHistory={searchHistory}/>
         <PaginationTable searchHistory={searchHistory} setSeachHistory={setSeachHistory}/>

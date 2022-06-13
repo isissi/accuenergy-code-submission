@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 import "./Time.styles.scss"
 
-const Time = ({ location }) => {
+const Time = ({ location, error }) => {
   // console.log(location);
   const [time, setTime] = useState(null)
   useEffect(() => {
@@ -18,7 +18,7 @@ const Time = ({ location }) => {
   const date = new Date().toLocaleString("en-US", { timeZone: Time.timeZoneId })
   return (
     <>
-      {time ?
+      {time && !error ?
         <p className="time"> Timezone: {time.timeZoneName}, Local time: {date}</p>
         : <p className="time"><br/></p>
       }
