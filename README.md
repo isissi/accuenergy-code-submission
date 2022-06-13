@@ -1,71 +1,32 @@
-# Getting Started with Create React App
+# accuenergy-code-submission - Front-End - version 1.0.0
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a code submission project for Accuenergy. 
 
-## Available Scripts
+## Features
+This single web page includes the following features: 
+A. A button to support user location acquisition from browser.
+B. A module which allows user to input the name of a location. (Searching feature is triggered by both button click, and press enter key on the keyboard)
+a. Display the location on the map and add a marker to each searched location every time when the location is changed.
+b. A table with pagination to show all searched places:
+  1. It displays a maximum of 10 records on each page.
+  2. A checkbox at the beginning of each row to allow user to select multiple records at the same time.
+  3. A delete button on the top of it to delete all selected records as well as the marker on the map.
+c. Display the time zone and local time of the latest searched location. 
 
-In the project directory, you can run:
+## System dependencies
+- SASS
+- Ant Design
+- Google Maps API
+- React Geocode
+- Axios
+- React Loading Skeleton
+- Web Vitals
 
-### `npm start`
+## Gif Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# accuenergy-code-submission
+## How To Setup
+1. cd into the directory 
+2. Run `npm install` to install the dependencies.
+3. Rename .env.development.example.local to .env.development.local and add a valid Google Maps API key string.
+4. Run `npm start`
