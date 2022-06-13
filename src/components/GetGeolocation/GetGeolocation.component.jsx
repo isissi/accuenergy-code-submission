@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import getAddress from "../../helpers/getAddress";
 
 import "./GetGeolocation.styles.scss";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 import 'react-loading-skeleton/dist/skeleton.css'
 
 const GetGeolocation = () => {

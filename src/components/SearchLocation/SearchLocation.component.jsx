@@ -6,10 +6,9 @@ import { Input, Space } from "antd";
 import { useEffect, useState } from "react";
 
 import "./SearchLocation.styles.scss"
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 
 import getGeocode from "../../helpers/getGeoCode";
-import getTimezone from "../../helpers/getTimezone";
 
 const SearchLocation = () => {
   const [ location, setLocation ] = useState({address:"", lat: null, lng: null});

@@ -1,4 +1,4 @@
-import { GoogleMap, useJsApiLoader, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import React from 'react';
 
 const Map = ({location, searchHistory}) => {
@@ -15,16 +15,10 @@ const Map = ({location, searchHistory}) => {
     lng: lng || -79.3832
   };
 
-  const { isLoaded, loadError } = useJsApiLoader({
+  const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
   })
-
-  const [map, setMap] = React.useState(null)
-
-  const onUnmount = React.useCallback(function callback(map) {
-    setMap(null)
-  }, [])
 
   const options = {
     disableDefaultUI: true,
@@ -36,7 +30,6 @@ const Map = ({location, searchHistory}) => {
       mapContainerStyle={containerStyle}
       center={center}
       zoom={13}
-      onUnmount={onUnmount}
       options={options}
     >
     {history.map((location, index) => {

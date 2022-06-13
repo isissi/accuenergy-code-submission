@@ -16,7 +16,7 @@ const Time = ({ location, error }) => {
   }, [location]);
 
   //get lcoal time by timezone id
-  const date = new Date().toLocaleString("en-US", { timeZone: time.timeZoneId });
+  const date = time ? new Date().toLocaleString("en-US", { timeZone: time.timeZoneId }) : "";
 
   return (
     <>
