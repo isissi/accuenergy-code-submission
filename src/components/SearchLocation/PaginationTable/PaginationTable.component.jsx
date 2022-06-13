@@ -52,7 +52,7 @@ const PaginationTable = ({searchHistory, setSeachHistory}) => {
       </div>
 
       <Table
-      pagination={{pageSize: 10}}
+        pagination={{hideOnSinglePage: true, pageSize: 10}}
         rowSelection={{
           type: 'checkbox',
           ...rowSelection,
