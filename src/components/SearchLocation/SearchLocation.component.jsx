@@ -1,5 +1,6 @@
 import Map from "./Map/Map.component";
 import PaginationTable from "./PaginationTable/PaginationTable.component";
+import Time from "./Time/Time.component";
 
 import { Input, Space } from "antd";
 import { useEffect, useState } from "react";
@@ -8,6 +9,7 @@ import "./SearchLocation.styles.scss"
 import "antd/dist/antd.css";
 
 import getGeocode from "../../helpers/getGeoCode";
+import getTimezone from "../../helpers/getTimezone";
 
 const SearchLocation = () => {
   const [ location, setLocation ] = useState({address:"", lat: null, lng: null});
@@ -17,7 +19,7 @@ const SearchLocation = () => {
   const { Search } = Input;
 
   useEffect(() => {
-    setSeachHistory(prev => [...prev, location])
+    setSeachHistory(prev => [...prev, location]);
     }, [location]);
 
   const onSearch = async (value) => {
@@ -44,6 +46,7 @@ const SearchLocation = () => {
       />
       <p style={{visibility: error ? "visible" : "hidden"}}>Please provide a valid location</p>
       </Space>
+      <Time location={location}/>
       <div className="map-table-container">
         <Map location={location} searchHistory={searchHistory}/>
         <PaginationTable searchHistory={searchHistory} setSeachHistory={setSeachHistory}/>

@@ -16,22 +16,25 @@ const GetGeolocation = () => {
 
   useEffect(() => {
     if(geolocation!==null){
-      getAddress(geolocation).then((res)=>setAddress(res))
+      getAddress(geolocation).then((res)=>
+        setAddress(res)
+      )
     }
     }, [geolocation]);
 
 
-  const cordinate = !address ? <Skeleton width={500} height={30}/> : "Laitude: " + geolocation.latitude + ", Longitude: " + geolocation.latitude;
+  const coordinate = !address ? <Skeleton width={500} height={30}/> : "Laitude: " + geolocation.latitude + ", Longitude: " + geolocation.latitude;
 
   const displayAddress = !address ? <Skeleton width={500} height={30}/> : 'Your address: ' + address;
 
   const onClick = () => {
     setButtonClicked(true);
-      //get cordinate from browser, & update te geolocation
+      //get coordinate from browser, & update te geolocation
       navigator.geolocation.getCurrentPosition(function(position) {
-      setGeolocation({latitude: position.coords.latitude, longitude:position.coords.longitude});
+      setGeolocation({latitude: position.coords.latitude, longitude:position.coords.longitude})
       })
   }
+
 
   return (
     <div id="geo-button-container">
@@ -40,7 +43,7 @@ const GetGeolocation = () => {
         <h2>Get your geolocation from browser <br/> Click here↓</h2> 
         :
         <>
-          <h2>{cordinate}</h2> 
+          <h2>{coordinate}</h2> 
           <h2>{displayAddress}</h2>
         </>
       }
