@@ -23,7 +23,14 @@ c. Display the time zone and local time of the latest searched location.
 - Web Vitals
 
 ## Gif Screenshots
+![Get geolocation](https://github.com/isissi/accuenergy-code-submission/blob/main/public/screenshots/getGeolocation.gif?raw=true "Get geolocation")
+Get latitude, logitude & address from browser
 
+![Search location](https://github.com/isissi/accuenergy-code-submission/blob/main/public/screenshots/searchLocation.gif?raw=true "Search location")
+Search location
+
+![Delete location](https://github.com/isissi/accuenergy-code-submission/blob/main/public/screenshots/deleteLocation.gif?raw=true "Delete location")
+Delete location
 
 ## How To Setup
 1. cd into the directory 
