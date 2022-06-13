@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import "./Time.styles.scss"
 
 const Time = ({ location, error }) => {
-  // console.log(location);
-  const [time, setTime] = useState(null)
+  const [time, setTime] = useState(null);
+
   useEffect(() => {
     if (location.address !== "") {
       getTimezone(location).then(res => setTime({
@@ -15,7 +15,9 @@ const Time = ({ location, error }) => {
     }
   }, [location]);
 
-  const date = new Date().toLocaleString("en-US", { timeZone: Time.timeZoneId })
+  //get lcoal time by timezone id
+  const date = new Date().toLocaleString("en-US", { timeZone: time.timeZoneId });
+
   return (
     <>
       {time && !error ?
