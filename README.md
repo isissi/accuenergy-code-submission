@@ -4,14 +4,14 @@ This is a code submission project for Accuenergy.
 
 ## Features
 This single web page includes the following features: 
-A. A button to support user location acquisition from browser.
-B. A module which allows user to input the name of a location. (Searching feature is triggered by both button click, and press enter key on the keyboard)
-a. Display the location on the map and add a marker to each searched location every time when the location is changed.
-b. A table with pagination to show all searched places:
-  1. It displays a maximum of 10 records on each page.
-  2. A checkbox at the beginning of each row to allow user to select multiple records at the same time.
-  3. A delete button on the top of it to delete all selected records as well as the marker on the map.
-c. Display the time zone and local time of the latest searched location. 
+- A button to support user location acquisition from browser.
+- A module which allows user to input the name of a location. (Searching feature is triggered by both button click, and press enter key on the keyboard)
+  1. Display the location on the map and add a marker to each searched location every time when the location is changed.
+  2. A table with pagination to show all searched places:
+    - It displays a maximum of 10 records on each page.
+    - A checkbox at the beginning of each row to allow user to select multiple records at the same time.
+    - A delete button on the top of it to delete all selected records as well as the marker on the map.
+  3. Display the time zone and local time of the latest searched location. 
 
 ## System dependencies
 - SASS
@@ -23,14 +23,14 @@ c. Display the time zone and local time of the latest searched location.
 - Web Vitals
 
 ## Gif Screenshots
+1. Get latitude, logitude & address from browser
 ![Get geolocation](https://github.com/isissi/accuenergy-code-submission/blob/main/public/screenshots/getGeolocation.gif?raw=true "Get geolocation")
-Get latitude, logitude & address from browser
 
+2. Search location
 ![Search location](https://github.com/isissi/accuenergy-code-submission/blob/main/public/screenshots/searchLocation.gif?raw=true "Search location")
-Search location
 
+3. Delete location
 ![Delete location](https://github.com/isissi/accuenergy-code-submission/blob/main/public/screenshots/deleteLocation.gif?raw=true "Delete location")
-Delete location
 
 ## How To Setup
 1. cd into the directory 
