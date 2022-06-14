@@ -3,8 +3,8 @@ import React from 'react';
 
 const Map = ({location, searchHistory}) => {
   const {lat, lng} = location;
-  const history = searchHistory.slice(2);
-
+  const history = searchHistory.filter(history => history.address !== "");
+  
   const containerStyle = {
     width: '60vw',
     height: '70vh'
