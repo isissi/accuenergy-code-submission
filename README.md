@@ -1,6 +1,7 @@
 # accuenergy-code-submission - Front-End - version 1.0.0
 
-This is a code submission project for Accuenergy. 
+This is a project for Accuenergy's code submission. 
+The page is deployed using Github Pages at: https://isissi.github.io/
 
 ## Features
 This single web page includes the following features: 
